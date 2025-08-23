@@ -26,7 +26,7 @@ const {formatNumber}= useHelpers()
 const fetchUsers = async () => {
   loading.value = true;
   try {
-    const res = await api.get("/api/users");
+    const res = await api.get("/api/users", { params: { page:1, limit:1000 } });
     users.value = res.data.data;
 
     console.log(users.value)

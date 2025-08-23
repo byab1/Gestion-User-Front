@@ -70,6 +70,8 @@ frontend/
     - Tri par ID
     - Filtre dynamique par nom et email
 - Formulaire d'ajout / modification utilisateur
+- Suppression utilisateur
+- Système de logs (historique d'actions)
 - Upload de photo de profil
 - Notifications toast (succès / erreur)
 - Affichage conditionnel des actions selon le rôle (admin / user)

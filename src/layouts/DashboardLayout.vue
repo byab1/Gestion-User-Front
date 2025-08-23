@@ -20,6 +20,14 @@
         >
           👥 Utilisateurs
         </RouterLink>
+        <RouterLink
+          to="/logs"
+          class="block px-4 py-2 rounded-lg hover:bg-gray-200"
+          active-class="bg-gray-300 font-semibold"
+          v-if="userStore.user.roles.includes('ROLE_ADMIN')"
+        >
+          📜 Logs
+        </RouterLink>
       </nav>
     </aside>
 

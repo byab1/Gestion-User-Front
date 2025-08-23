@@ -9,7 +9,8 @@
   "scripts": {
     "dev": "vite",
     "build": "vite build",
-    "preview": "vite preview"
+    "preview": "vite preview",
+    "test": "jest"
   },
   "dependencies": {
     "@primeuix/themes": "^1.2.3",
@@ -23,11 +24,24 @@
     "vue-router": "^4.5.1"
   },
   "devDependencies": {
+    "@babel/core": "^7.28.3",
+    "@babel/preset-env": "^7.28.3",
+    "@jest/globals": "^30.0.5",
+    "@testing-library/jest-dom": "^6.8.0",
+    "@testing-library/vue": "^8.1.0",
     "@vitejs/plugin-vue": "^6.0.1",
+    "@vue/test-utils": "^2.4.6",
     "autoprefixer": "^10.4.21",
+    "babel-jest": "^26.6.3",
+    "identity-obj-proxy": "^3.0.0",
+    "jest": "^26.6.3",
+    "jest-environment-jsdom": "^29.7.0",
+    "jsdom": "^26.1.0",
     "postcss": "^8.5.6",
     "tailwindcss": "^3.4.6",
     "vite": "^7.0.6",
-    "vite-plugin-vue-devtools": "^8.0.0"
+    "vite-plugin-vue-devtools": "^8.0.0",
+    "vitest": "^3.2.4",
+    "vue-jest": "^5.0.0-alpha.10"
   }
 }

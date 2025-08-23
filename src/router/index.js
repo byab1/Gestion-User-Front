@@ -7,6 +7,7 @@ import UsersPage from '@/views/UsersPage.vue'
 import NotFound from '@/views/errors/NotFound.vue'
 import ServerError from '@/views/errors/ServerError.vue'
 import Forbidden from '@/views/errors/Forbidden.vue'
+import LogsPage from '@/views/LogsPage.vue'
 
 // const routes = [
 //   { path: '/login', component: LoginView, meta: { guest: true } },
@@ -38,6 +39,12 @@ const routes = [
         name: 'Users',
         component: UsersPage,
         meta: { title: 'Gestion des utilisateurs' }
+      },
+      {
+        path: 'logs',
+        name: 'Logs',
+        component: LogsPage,
+        meta: { requiresAuth: true, adminOnly: true }
       }
     ]
   },

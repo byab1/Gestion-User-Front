@@ -29,7 +29,7 @@ async function onSubmit() {
     await auth.login(email.value, password.value)
     toast.add({ severity: 'success', summary: 'Connecté', detail: 'Bienvenue', life: 2000 })
     // redirect to home
-    window.location.href = '/'
+    window.location.href = '/dashboard'
   } catch (err) {
     const msg = err.response?.data?.message || 'Erreur de connexion'
     toast.add({ severity: 'error', summary: 'Erreur', detail: msg, life: 4000 })

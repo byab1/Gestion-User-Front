@@ -120,7 +120,6 @@
 <script setup>
 import { ref, watch } from "vue"
 import { BASE_IMG_URL } from "../../config"
-import { Select } from "primevue"
 
 const props = defineProps({
   visible: Boolean,

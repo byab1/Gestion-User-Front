@@ -1,3 +1,22 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+
+/* main.css */
+.p-toast {
+  background-color: rgba(255, 255, 255, 0.95) !important; /* fond blanc opaque */
+  box-shadow: 0 4px 10px rgba(0,0,0,0.15);
+  border-radius: 8px !important;
+  color: #111 !important;
+  font-weight: 500;
+}
+.p-toast-message {
+  padding: 1rem !important;
+}
+.p-toast-success {
+  border-left: 5px solid #22c55e !important; /* vert */
+}
+.p-toast-error {
+  border-left: 5px solid #ef4444 !important; /* rouge */
+}

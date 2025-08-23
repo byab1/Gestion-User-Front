@@ -27,7 +27,7 @@
     <div class="flex-1 flex flex-col">
       <!-- Header -->
       <header class="h-16 bg-white shadow-md flex items-center justify-between px-6">
-        <h1 class="text-lg font-semibold">Tableau de bord</h1>
+        <h1 class="text-lg font-semibold">{{ currentTitle }}</h1>
         <div class="relative">
           <button @click="toggleMenu" class="flex items-center space-x-2 focus:outline-none">
             <span class="text-gray-700 font-medium">{{ userStore.user.name }}</span>
@@ -54,7 +54,7 @@
 
       <!-- Content -->
       <main class="flex-1 p-6 overflow-y-auto">
-        <slot />
+       <router-view />
       </main>
     </div>
   </div>
@@ -62,17 +62,21 @@
 
 <script setup>
 import { useAuthStore } from "@/store/auth";
-import { ref } from "vue";
-import { useRouter } from "vue-router";
+import { computed, ref } from "vue";
+import { useRoute, useRouter } from "vue-router";
 import { BASE_IMG_URL } from "../../config";
 
 const router = useRouter();
+const route = useRoute();
 const menuOpen = ref(false);
 
 const userStore = useAuthStore();
 console.log("userStore",userStore.user.name)
 
 const defaultAvatar = 'https://i.pravatar.cc/40'
+
+const currentTitle = computed(() => route.meta.title || "Tableau de bord");
+
 
 function toggleMenu() {
   menuOpen.value = !menuOpen.value;

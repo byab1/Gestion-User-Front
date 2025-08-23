@@ -1,11 +1,22 @@
-<script setup></script>
-
 <template>
-  <h1>You did it!</h1>
-  <p>
-    Visit <a href="https://vuejs.org/" target="_blank" rel="noopener">vuejs.org</a> to read the
-    documentation
-  </p>
+  <div class="min-h-screen bg-gray-50">
+    <Toast />
+    <router-view />
+  </div>
 </template>
 
-<style scoped></style>
+<script setup>
+import { onMounted } from 'vue'
+import { useAuthStore } from './store/auth'
+import Toast from 'primevue/toast'
+
+const auth = useAuthStore()
+onMounted(() => {
+  // hydrate user if token present
+  if (!auth.user && auth.token) auth.fetchMe().catch(()=>auth.logout())
+})
+</script>
+
+<style>
+/* global styles if needed */
+</style>

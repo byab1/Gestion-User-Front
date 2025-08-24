@@ -44,7 +44,7 @@ const routes = [
         path: 'logs',
         name: 'Logs',
         component: LogsPage,
-        meta: { requiresAuth: true, adminOnly: true }
+        meta: { requiresAuth: true, adminOnly: true,  title: 'Logs des activités' }
       }
     ]
   },

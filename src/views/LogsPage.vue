@@ -16,46 +16,46 @@
         class="border rounded px-3 py-1"
       />
     </div>
-
-    <table class="min-w-full bg-white shadow-md rounded overflow-hidden">
-      <thead class="bg-gray-100">
-        <tr>
-          <th class="px-4 py-2 cursor-pointer" @click="sortBy('id')">ID</th>
-          <th class="px-4 py-2 cursor-pointer" @click="sortBy('user')">Utilisateur</th>
-          <th class="px-4 py-2 cursor-pointer" @click="sortBy('action')">Action</th>
-          <th class="px-4 py-2 cursor-pointer" @click="sortBy('details')">Détails</th>
-          <th class="px-4 py-2 cursor-pointer" @click="sortBy('createdAt')">Date</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr
-          v-for="log in filteredLogs"
-          :key="log.id"
-          class="border-b hover:bg-gray-50"
-        >
-          <td class="px-4 py-2">{{ log.id }}</td>
-          <td class="px-4 py-2">{{ log.user.name }}</td>
-          <td class="px-4 py-2">{{ log.action }}</td>
-          <td class="px-4 py-2">{{ log.details }}</td>
-          <td class="px-4 py-2">{{ log.createdAt }}</td>
-        </tr>
-      </tbody>
-    </table>
-
-    <!-- Pagination -->
-    <div class="mt-4 flex justify-center gap-2">
+      <div class="overflow-x-auto">
+          <table class="min-w-full bg-white shadow-md rounded overflow-hidden">
+            <thead class="bg-gray-100">
+              <tr>
+                <th class="px-4 py-2 cursor-pointer" @click="sortBy('id')">ID</th>
+                <th class="px-4 py-2 cursor-pointer" @click="sortBy('user')">Utilisateur</th>
+                <th class="px-4 py-2 cursor-pointer" @click="sortBy('action')">Action</th>
+                <th class="px-4 py-2 cursor-pointer" @click="sortBy('details')">Détails</th>
+                <th class="px-4 py-2 cursor-pointer" @click="sortBy('createdAt')">Date</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr
+                v-for="log in filteredLogs"
+                :key="log.id"
+                class="border-b hover:bg-gray-50"
+              >
+                <td class="px-4 py-2">{{ log.id }}</td>
+                <td class="px-4 py-2">{{ log.user.name }}</td>
+                <td class="px-4 py-2">{{ log.action }}</td>
+                <td class="px-4 py-2">{{ log.details }}</td>
+                <td class="px-4 py-2">{{ log.createdAt }}</td>
+              </tr>
+            </tbody>
+          </table>
+      </div>
+      <!-- Pagination -->
+    <div class="flex justify-between items-center mt-4">
       <button
         @click="prevPage"
-        :disabled="page <= 1"
-        class="px-3 py-1 bg-gray-200 rounded disabled:opacity-50"
+        :disabled="page === 1"
+        class="px-3 py-2 border rounded bg-gray-100 disabled:opacity-50"
       >
         Précédent
       </button>
-      <span>Page {{ page }}</span>
+      <span>Page {{ page }} / {{ totalPages }}</span>
       <button
         @click="nextPage"
-        :disabled="page >= totalPages"
-        class="px-3 py-1 bg-gray-200 rounded disabled:opacity-50"
+        :disabled="page === totalPages"
+        class="px-3 py-2 border rounded bg-gray-100 disabled:opacity-50"
       >
         Suivant
       </button>

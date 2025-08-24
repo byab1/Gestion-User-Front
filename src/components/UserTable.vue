@@ -151,7 +151,7 @@ const users = ref([])
 const total = ref(0)
 const page = ref(1)
 const limit = ref(5)
-const sortOrder = ref("asc")
+const sortOrder = ref("desc")
 const filters = ref({ name: "", email: "" })
 
 const authStore = useAuthStore()

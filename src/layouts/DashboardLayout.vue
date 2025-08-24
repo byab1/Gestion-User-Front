@@ -32,7 +32,7 @@
     </aside>
 
     <!-- Main content -->
-    <div class="flex-1 flex flex-col">
+    <div class="flex-1 min-w-0 flex flex-col">
       <!-- Header -->
       <header class="h-16 bg-white shadow-md flex items-center justify-between px-6">
         <h1 class="text-lg font-semibold">{{ currentTitle }}</h1>
@@ -61,7 +61,7 @@
       </header>
 
       <!-- Content -->
-      <main class="flex-1 p-6 overflow-y-auto">
+      <main class="flex-1 min-w-0 p-6 overflow-y-auto">
        <router-view />
       </main>
     </div>
